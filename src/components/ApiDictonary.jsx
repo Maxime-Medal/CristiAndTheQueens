@@ -1,49 +1,31 @@
 import axios from "axios";
-import Word from "./Word";
 import React, { useEffect, useState } from "react";
 
 const ApiDictonary = () => {
-  const [words, setWords] = useState([]);
-  const [wordsDetails, setWordsDetails] = useState(null);
-  const [wordsToChose, setWordsToChose] = useState([]);
+  const [track, setTrack] = useState([]);
+  const [lyrics, setLyrics] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://random-words-api.vercel.app/word")
       .then((res) => res.data)
-      .then((data) => {
-        setWords(data);
-      });
+      .then((tracklist) => setTrack(tracklist))
+      .then(console.log(track))
+      .catch((err) => console.log(err));
   }, []);
-  let a = []
-  for (let i = 0; i < words.length; i++) {
-    a.push(words[i].word.replace(/['"]+/g, ""));
-    console.log(a);
-  }
-  useEffect(() => {
-      for (let i=0; i<a.length; i++) {
-      axios
-        .get(
-          `https://magical-it-works.jsrover.wilders.dev/https://api.dictionaryapi.dev/api/v2/entries/en/${a[i]}`
-        )
-        .then((res) => res.data)
-        .then((data) => {
-          setWordsDetails(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        wordsToChose.push(wordsDetails);
-    }
-  }, [words]);
 
-  return (
-    <div>
-      {words.map((word) => (
-        <Word word={word} key={word.word} />
-      ))}
-    </div>
-  );
+  useEffect(() => {
+    if (track) {
+      let a = track
+      console.log(a);
+      axios
+        .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${track.word}`)
+        .then((res) => res.data)
+        .then((lyricsArray) => setLyrics(lyricsArray));
+    }
+  }, [track]);
+
+  return <div></div>;
 };
 
 export default ApiDictonary;
