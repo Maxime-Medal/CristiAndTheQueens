@@ -10,18 +10,18 @@ const ApiDictonary = () => {
       .get("https://random-words-api.vercel.app/word")
       .then((res) => res.data)
       .then((tracklist) => setTrack(tracklist))
-      .then(console.log(track))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     if (track) {
-      let a = track
-      console.log(a);
+      let a = track[0].word
+      let link = a.replace(/'/gi,'');
       axios
-        .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${track.word}`)
+        .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${link}`)
         .then((res) => res.data)
-        .then((lyricsArray) => setLyrics(lyricsArray));
+        .then((lyricsArray) => setLyrics(lyricsArray))
+        .then(console.log(lyrics));
     }
   }, [track]);
 
