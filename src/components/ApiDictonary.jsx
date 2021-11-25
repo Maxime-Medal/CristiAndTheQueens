@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const ApiDictonary = () => {
-  const [track, setTrack] = useState([]);
-  const [lyrics, setLyrics] = useState([]);
+  const [track, setTrack] = useState(null);
+  const [lyrics, setLyrics] = useState(null);
 
   useEffect(() => {
     axios
@@ -15,13 +15,16 @@ const ApiDictonary = () => {
 
   useEffect(() => {
     if (track) {
+      console.log(track)
       let a = track[0].word
+      console.log(a)
       let link = a.replace(/'/gi,'');
+      console.log(link)
       axios
         .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${link}`)
         .then((res) => res.data)
         .then((lyricsArray) => setLyrics(lyricsArray))
-        .then(console.log(lyrics));
+        .then(console.log(lyrics))
     }
   }, [track]);
 
