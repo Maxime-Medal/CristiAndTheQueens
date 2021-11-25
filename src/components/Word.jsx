@@ -4,7 +4,7 @@ const Word = ({ word }) => {
   return (
     <div>
       <h1>{word.word}</h1>
-      <p>{word.PartOfSpeech}</p>
+      <p>{word.phonetic}</p>
     </div>
   );
 };

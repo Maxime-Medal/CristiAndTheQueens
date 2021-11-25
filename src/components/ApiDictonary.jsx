@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 
 const ApiDictonary = () => {
   const [words, setWords] = useState([]);
-  const [wordsDetails, setWordsDetails] = useState([]);
+  const [wordsDetails, setWordsDetails] = useState(null);
+  const [wordsToChose, setWordsToChose] = useState([]);
 
   useEffect(() => {
     axios
@@ -14,25 +15,27 @@ const ApiDictonary = () => {
         setWords(data);
       });
   }, []);
-
-  let def = [];
-
+  let a = []
+  for (let i = 0; i < words.length; i++) {
+    a.push(words[i].word.replace(/['"]+/g, ""));
+    console.log(a);
+  }
   useEffect(() => {
-    for (let i = 0; i < words.length; i++) {
+      for (let i=0; i<a.length; i++) {
       axios
         .get(
-          `https://magical-it-works.jsrover.wilders.dev/https://api.dictionaryapi.dev/api/v2/entries/en/${words[i]}`
+          `https://magical-it-works.jsrover.wilders.dev/https://api.dictionaryapi.dev/api/v2/entries/en/${a[i]}`
         )
-        .then((res) => res.data.meanings)
-        .then((data) => data.reduce(def, []))
+        .then((res) => res.data)
         .then((data) => {
           setWordsDetails(data);
         })
         .catch((err) => {
           console.log(err);
         });
-    def.push(wordsDetails);
-  }}, []);
+        wordsToChose.push(wordsDetails);
+    }
+  }, [words]);
 
   return (
     <div>
