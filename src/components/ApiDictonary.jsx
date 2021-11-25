@@ -7,7 +7,7 @@ const ApiDictonary = () => {
 
   useEffect(() => {
     axios
-      .get("https://random-words-api.vercel.app/word")
+      .get("https://random-word-api.herokuapp.com/word")
       .then((res) => res.data)
       .then((tracklist) => setTrack(tracklist))
       .catch((err) => console.log(err));
@@ -16,7 +16,7 @@ const ApiDictonary = () => {
   useEffect(() => {
     if (track) {
       console.log(track)
-      let a = track[0].word
+      let a = track[0]
       console.log(a)
       let link = a.replace(/'/gi,'');
       console.log(link)
