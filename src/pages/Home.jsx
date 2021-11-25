@@ -41,6 +41,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height:100%;
+  background-color: red;
   
   .example{
     background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80');
@@ -50,7 +52,7 @@ const MainContainer = styled.div`
 
 const Exemple1 = styled.p`
   text-align: justify;
-  margin: 2em;
+  padding: 2em;
   background-color: rgba(227, 219, 219,0.8);
 `;
 
