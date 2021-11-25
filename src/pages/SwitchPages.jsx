@@ -1,9 +1,9 @@
-const SwitchPage = () => {
+const SwitchPages = () => {
   return (
-    <div className="switch">
+    <div className="mainContainer">
       
     </div>
   );
 }
 
-export default SwitchPage;
+export default SwitchPages;
