@@ -2,15 +2,16 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 
-const Resume = () => {
+const Resume = ({array}) => {
   return (
     <ResumeContainer className="resume" >
-     <h1>Voici Vos phrases</h1>
      <ResumeCard >
      
 <div className="cards">
 
-  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <ul>
+       {array.map((e) => <li>{e}</li>)}
+      </ul>
    
 </div>
 

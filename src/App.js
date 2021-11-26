@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
@@ -6,10 +6,11 @@ import SwitchPages from "./pages/SwitchPages";
 
 
 const App = () => {
-  const [word, setWord] = React.useState()
   //<GiveSentences words={array} numbSentence={nb} />
-console.log(word)
   const [rangeWordValue, setRangeWordValue] = React.useState(10);
+  const [rangeSentenceValue, setRangeSentenceValue] = useState(10);
+  const [sentences, setSentences] = useState(null)
+
   return (
     <div className="app">
       <Switch>
@@ -17,9 +18,11 @@ console.log(word)
           <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>
           </Route>
         <Route path="/SwitchPages" exact >
-        <SwitchPages rangeWordValue={rangeWordValue} setWord={setWord}/>
+        <SwitchPages rangeWordValue={rangeWordValue} rangeSentenceValue={rangeSentenceValue} setRangeSentenceValue={setRangeSentenceValue} sentences={sentences} setSentences={setSentences} />
         </Route>
-        <Route path="/SwitchPages/answer" exact component={Resume} />
+        <Route path="/SwitchPages/answer" exact>
+        <Resume array={sentences} />
+        </Route>
       </Switch>
     </div>
   );

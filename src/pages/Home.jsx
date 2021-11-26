@@ -6,8 +6,7 @@ import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
 import "../index.css";
 
-const Home = ({ rangeWordValue, setRangeWordValue }) => {
-  const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
+const Home = ({ rangeWordValue, setRangeWordValue, rangeSentenceValue, setRangeSentenceValue }) => {
 
   const handleClick = () => {
     console.log("fonction à inserer");

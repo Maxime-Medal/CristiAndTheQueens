@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GiveSentences({words, numbSentence}) {
+function GiveSentences(words, numbSentence) {
     let verbs = [
         "market",
         "kill",
