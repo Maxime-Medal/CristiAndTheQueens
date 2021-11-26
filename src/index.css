@@ -32,10 +32,14 @@ body {
 }
 
 @media screen and (max-width: 380px){
+.NavBar{
+  margin-top: -6%;
+}
   .navigation {
     margin: 26px 0;
+    width: 60vh;
     display: flex;
-    background-color: grey;
+    background-color: #e3dbdb;
     justify-content: space-around;
   }
   
@@ -46,16 +50,14 @@ body {
     border-radius: 4px;
     font-size: 1.8rem;
     position: relative;
-    color: aqua;
+    color: #0E7C7B;
   }
 
   .nav-active ::after{
     width: 85%;
     height: 5px;
-    position: absolute;
+    
     bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
-    background: aqua;
-  }
-}
+  }}

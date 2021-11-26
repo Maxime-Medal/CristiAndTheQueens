@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Resume from "./Resume";
 import Navigation from "../components/Navigations";
+import Resume from "./Resume";
+
 
 const tab = [
   "mama",
@@ -23,7 +24,7 @@ const tab = [
 const phrase = [];
 
 function SwitchPage({ rangeWordValue }) {
-  const [state, setState] = React.useState("dydfregfzer");
+  const [state, setState] = React.useState("Click on like to begin");
 
   const deleteWord = () => {
     let index = Math.floor(Math.random() * tab.length);
@@ -35,6 +36,8 @@ function SwitchPage({ rangeWordValue }) {
     return setState(tab[index]), phrase.push(tab[index]), tab.splice(index, 1);
   };
   console.log(phrase);
+  console.log(tab)
+
   if (rangeWordValue === phrase.length) {
     return <Resume />;
   }
@@ -76,6 +79,7 @@ const DivWord = styled.div`
 
 const OneWord = styled.p`
   font-size: 3em;
+  text-align: center;
   justify-content: center;
   align-items: center;
   font-family: var(--text-font);

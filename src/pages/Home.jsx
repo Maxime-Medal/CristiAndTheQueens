@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Navigation from "../components/Navigations";
 import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
 import "../index.css";
-import Navigation from "../components/Navigations";
 
 const Home = ({ rangeWordValue, setRangeWordValue }) => {
   const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
@@ -16,38 +16,40 @@ const Home = ({ rangeWordValue, setRangeWordValue }) => {
 
   return (
     <MainContainer className="home">
-      <Navigation />
+      <Up>
+        <Navigation />
 
-      <div className="example">
-        <Exemple1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eius
-          architecto harum itaque nesciunt eligendi voluptatibus laboriosam.
-          Impedit, reiciendis non, ut sequi quaerat distinctio voluptas a magni
-          aut molestias numquam? Perspiciatis est asperiores reprehenderit
-          similique commodi id deserunt ipsam ratione sed sunt, totam labore.
-          Obcaecati, amet. Deleniti quidem hic expedita?
-        </Exemple1>
-      </div>
-      <div className="cursor">
-        <h2>
-          Number of sentences
-          <br />
-          {rangeSentenceValue}{" "}
-        </h2>
-        <SentenceButton
-          rangeSentenceValue={rangeSentenceValue}
-          setRangeSentenceValue={setRangeSentenceValue}
-        />
-        <h2>
-          Number of words
-          <br />
-          {rangeWordValue}{" "}
-        </h2>
-        <WordButton
-          rangeWordValue={rangeWordValue}
-          setRangeWordValue={setRangeWordValue}
-        />
-      </div>
+        <div className="example">
+          <Exemple1>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eius
+            architecto harum itaque nesciunt eligendi voluptatibus laboriosam.
+            Impedit, reiciendis non, ut sequi quaerat distinctio voluptas a
+            magni aut molestias numquam? Perspiciatis est asperiores
+            reprehenderit similique commodi id deserunt ipsam ratione sed sunt,
+            totam labore. Obcaecati, amet. Deleniti quidem hic expedita?
+          </Exemple1>
+        </div>
+        <div className="cursor">
+          <h2>
+            Number of sentences
+            <br />
+            {rangeSentenceValue}{" "}
+          </h2>
+          <SentenceButton
+            rangeSentenceValue={rangeSentenceValue}
+            setRangeSentenceValue={setRangeSentenceValue}
+          />
+          <h2>
+            Number of words
+            <br />
+            {rangeWordValue}{" "}
+          </h2>
+          <WordButton
+            rangeWordValue={rangeWordValue}
+            setRangeWordValue={setRangeWordValue}
+          />
+        </div>
+      </Up>
       <NavLink
         to="/SwitchPages"
         onClick={handleClick}
@@ -62,13 +64,15 @@ const Home = ({ rangeWordValue, setRangeWordValue }) => {
 const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-color: #bfc8de;
   align-items: center;
   height: 95vh;
   width: 100%;
   margin: 0;
+  opacity: 0.8;
 
   .example {
+    margin-top: -7%;
     background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
     background-size: contain;
   }
@@ -87,6 +91,12 @@ const MainContainer = styled.section`
   }
 `;
 
+const Up = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const Exemple1 = styled.p`
   text-align: justify;
   padding: 2em;
@@ -99,8 +109,8 @@ const ButtonChoice = styled.button`
   padding: 0.8em;
   font-size: 16px;
   border-radius: 5px;
-  color: blue;
-  background-color: var(--important-color);
+  color: white;
+  background-color: grey;
   font-weight: bold;
 `;
 
