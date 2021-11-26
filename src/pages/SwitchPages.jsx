@@ -1,5 +1,9 @@
 import React from "react";
+
+import Navigation from "../components/Navigations";
+
 import Resume from "./Resume";
+
 
 const tab = [
   "mama",
@@ -21,12 +25,12 @@ const tab = [
 
 const phrase = [];
 
-function SwitchPage({ rangeWordValue }) {
+function SwitchPage({ rangeWordValue, setWord }) {
   const [state, setState] = React.useState("Click on like to begin");
 
   const deleteWord = () => {
     let index = Math.floor(Math.random() * tab.length);
-    return tab.splice(index, 1), tab.splice(index, 1), setState(tab[index]);
+    return tab.splice(index, 1), setState(tab[index]);
   };
 
   const addWord = () => {
@@ -41,9 +45,15 @@ function SwitchPage({ rangeWordValue }) {
   console.log(tab)
 
   if (rangeWordValue == phrase.length) {
+    setWord(phrase)
     return <Resume />;
   }
   return (
+    <div className="mainContainer">
+       <Navigation/>
+      <div className="title">
+        Welcome on switch page
+        </div>
     <div>
       <div>
         <h1>{state}</h1>
@@ -55,7 +65,9 @@ function SwitchPage({ rangeWordValue }) {
         <button type="button" onClick={addWord}>
           Like
         </button>
+
       </div>
+    </div>
     </div>
   );
 }
