@@ -6,8 +6,9 @@ import SwitchPages from "./pages/SwitchPages";
 
 
 const App = () => {
+  const [word, setWord] = React.useState()
   //<GiveSentences words={array} numbSentence={nb} />
-
+console.log(word)
   const [rangeWordValue, setRangeWordValue] = React.useState(10);
   return (
     <div className="app">
@@ -16,7 +17,7 @@ const App = () => {
           <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>
           </Route>
         <Route path="/SwitchPages" exact >
-        <SwitchPages rangeWordValue={rangeWordValue} />
+        <SwitchPages rangeWordValue={rangeWordValue} setWord={setWord}/>
         </Route>
         <Route path="/SwitchPages/answer" exact component={Resume} />
       </Switch>
