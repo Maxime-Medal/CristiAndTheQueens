@@ -1,44 +1,45 @@
-import React from 'react'
-import Resume from './Resume';
+import React from "react";
+import Resume from "./Resume";
 
 const tab = [
-  { name: "mama", type: "adjectif" },
-  { name: "daz", type: "feezf" },
-  { name: "jeanluc", type: "juju" },
-  { name: "pedro", type: "blblba" },
-  { name: "archic", type: "jucezju" },
-  { name: "jeauc", type: "jujccdcu" },
-  { name: "jeanecluc", type: "juju" },
+  "mama",
+  "adjectif",
+  "daz",
+  "feezf",
+  "jeanluc",
+  "juju",
+  "pedro",
+  "blblba",
+  "archic",
+  "jucezju",
+  "jeauc",
+  "jujccdcu",
+  "jeanecluc",
+  "juju",
 ];
-const objet = tab.map((e) => e.name);
+
 const phrase = [];
 
 function SwitchPage({ rangeWordValue }) {
-  
   const [state, setState] = React.useState("dyd");
 
   const deleteWord = () => {
-    let index = Math.floor(Math.random() * objet.length);
-    return (objet.splice(index, 1),
-            tab.splice(index, 1), 
-            setState(objet[index])
-     );
+    let index = Math.floor(Math.random() * tab.length);
+    return tab.splice(index, 1), tab.splice(index, 1), setState(tab[index]);
   };
 
   const addWord = () => {
-    let index = Math.floor(Math.random() * objet.length);
+    let index = Math.floor(Math.random() * tab.length);
     return (
-        setState(objet[index]),
+      setState(tab[index]),
       phrase.push(tab[index]),
-      objet.splice(index, 1),
       tab.splice(index, 1)
-  
     );
   };
-console.log(phrase)
-if(rangeWordValue === phrase.length) {
-  return <Resume /> 
-}
+  console.log(phrase);
+  if (rangeWordValue === phrase.length) {
+    return <Resume />;
+  }
   return (
     <div>
       <div>
