@@ -11,7 +11,6 @@ const App = () => {
   const [rangeWordValue, setRangeWordValue] = React.useState(10);
   return (
     <div className="app">
-     
       <Switch>
         <Route path="/" exact >
           <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>

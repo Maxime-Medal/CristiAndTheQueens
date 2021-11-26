@@ -1,14 +1,13 @@
 import React from "react";
-
+import styled from "styled-components";
 import Navigation from "../components/Navigations";
-
 import Resume from "./Resume";
 
 
 const tab = [
   "mama",
   "adjectif",
-  "daz",
+  "grezgegehz",
   "feezf",
   "jeanluc",
   "juju",
@@ -22,7 +21,6 @@ const tab = [
   "juju",
 ];
 
-
 const phrase = [];
 
 function SwitchPage({ rangeWordValue }) {
@@ -35,43 +33,68 @@ function SwitchPage({ rangeWordValue }) {
 
   const addWord = () => {
     let index = Math.floor(Math.random() * tab.length);
-    return (
-      setState(tab[index]),
-      phrase.push(tab[index]),
-      tab.splice(index, 1)
-    );
+    return setState(tab[index]), phrase.push(tab[index]), tab.splice(index, 1);
   };
   console.log(phrase);
   console.log(tab)
 
-  if (rangeWordValue == phrase.length) {
+  if (rangeWordValue === phrase.length) {
     return <Resume />;
   }
   return (
+    <SelectWord>
+      <Navigation />
 
-    <div className="mainContainer">
-        <Navigation/>
-      <div className="title">
-        Welcome on switch page
-
-    <div>
-      <div>
-        <h1>{state}</h1>
-        <h1>{rangeWordValue}</h1>
-      </div>
-      <div className="button-container">
+      <DivWord>
+        <OneWord>{state}</OneWord>
+      </DivWord>
+      <LikeButton className="button-container">
         <button type="button" onClick={deleteWord}>
-          Dislike
+          ✗
         </button>
         <button type="button" onClick={addWord}>
-          Like
+          ✔️
         </button>
-
-      </div>
-    </div>
-    </div>
-    </div>
+      </LikeButton>
+    </SelectWord>
   );
 }
+const SelectWord = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+`;
+
+const DivWord = styled.div`
+  background-color: plum;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  border-radius: 25px;
+`;
+
+const OneWord = styled.p`
+  font-size: 3em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--text-font);
+`;
+
+const LikeButton = styled.div`
+  background-color: royalblue;
+  width: 100%;
+  
+  button {
+    width: 50%;
+    height: 100%;
+    font-size: 3em;
+    background-color:rgba();
+  }
+`;
 
 export default SwitchPage;
