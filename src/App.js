@@ -1,36 +1,26 @@
-import './App.css';
-import Home from './pages/Home';
-import GiveSentences from './components/GiveSentences.jsx';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Resume from "./pages/Resume";
+import SwitchPages from "./pages/SwitchPages";
+
 
 const App = () => {
-  let array = ['army',
-  'literature', "kill",
-  "want",
-  "wipe",
-  "integrate",
-  "persist",
-  "view",
-  "fear", "scary",
-  "guiltless",
-  "normal",
-  "trashy",
-  "half",
-  "jolly", 'solidly',
-  'successfully',
-  'upward', 'airport',
-  'tradition',
-  'refrigerator',
-  'comparison',
-  'guitar',
-  'dad',
-  'message',
-  'teaching',
-  'beautifully'];
-  let nb = 5;
+  //<GiveSentences words={array} numbSentence={nb} />
+
+  const [rangeWordValue, setRangeWordValue] = React.useState(10);
   return (
-    <div className="App">
-      <Home />
-      <GiveSentences words={array} numbSentence={nb} />
+    <div className="app">
+     
+      <Switch>
+        <Route path="/" exact >
+          <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>
+          </Route>
+        <Route path="/SwitchPages" exact >
+        <SwitchPages rangeWordValue={rangeWordValue} />
+        </Route>
+        <Route path="/SwitchPages/answer" exact component={Resume} />
+      </Switch>
     </div>
   );
 };
