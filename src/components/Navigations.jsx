@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
+        <div className="NavBar">
         <div className="navigation">
             <NavLink exact to="/" activeClassName="nav-active">
                 Accueil 
@@ -10,6 +11,7 @@ const Navigation = () => {
             <NavLink exact to="SwitchPages" activeClassName="nav-active">
                 Swiper
             </NavLink>
+        </div>
         </div>
     );
 };

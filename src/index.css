@@ -47,10 +47,12 @@ body {
   .nav-active ::after{
     width: 85%;
     height: 5px;
-    position: absolute;
+    
     bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
-    background: aqua;
   }
+
+  
+ 
 }
