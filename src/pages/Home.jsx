@@ -26,10 +26,10 @@ const Home = ({ rangeWordValue, setRangeWordValue, rangeSentenceValue, setRangeS
           </Exemple1>
         </div>
         <div className="cursor">
-          <h2>
+        <h2>
             Number of sentences
             <br />
-            {rangeSentenceValue}{" "}
+            {rangeSentenceValue}
           </h2>
           <SentenceButton
             rangeSentenceValue={rangeSentenceValue}

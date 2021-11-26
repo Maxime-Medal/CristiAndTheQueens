@@ -1,13 +1,13 @@
 import Cursor from "./styles/Cursor";
 
-const SentenceButton = ({rangeSentenceValue ,setRangeSentenceValue}) => {
+const SentenceButton = ({rangeSentenceValue, setRangeSentenceValue}) => {
 
   return (
     <Cursor className="sentenceButton">
-      <input className="customSlider"
+      <input
         type="range"
         min="1"
-        max="150"
+        max="50"
         value={rangeSentenceValue}
         onChange={(e) => setRangeSentenceValue(e.target.value)}
       />

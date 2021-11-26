@@ -7,7 +7,7 @@ const WordButton = ({rangeWordValue, setRangeWordValue}) => {
       <input
         type="range"
         min="1"
-        max="400"
+        max="200"
         value={rangeWordValue}
         onChange={(e) => setRangeWordValue(e.target.value)}
       />

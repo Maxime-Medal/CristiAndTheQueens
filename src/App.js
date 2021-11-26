@@ -8,7 +8,7 @@ import SwitchPages from "./pages/SwitchPages";
 const App = () => {
   //<GiveSentences words={array} numbSentence={nb} />
   const [rangeWordValue, setRangeWordValue] = React.useState(10);
-  const [rangeSentenceValue, setRangeSentenceValue] = useState(10);
+  const [rangeSentenceValue, setRangeSentenceValue] = useState(9);
   const [sentences, setSentences] = useState(null)
 
   return (
