@@ -1,11 +1,18 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
+import "../index.css";
 
 const Home = () => {
   const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
   const [rangeWordValue, setRangeWordValue] = useState(10);
+
+  const handleClick = () => {
+    console.log("fonction à inserer");
+    console.log(rangeSentenceValue, rangeWordValue);
+  };
 
   return (
     <MainContainer className="home">
@@ -31,31 +38,46 @@ const Home = () => {
           setRangeWordValue={setRangeWordValue}
         />
       </div>
-
+      <NavLink to="/answer" onClick={handleClick} value={rangeSentenceValue, rangeWordValue} >
+        <ButtonChoice>check your choice</ButtonChoice>
+      </NavLink>
     </MainContainer>
   );
 };
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:100%vh;
+  width: 100%;
+  height: 100%;
   background-color: red;
-  
-  .example{
-    background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80');
+
+  .example {
+    background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
     background-size: contain;
   }
-  `;
+
+  h2 {
+    font-family: var(--title-font);
+  }
+`;
 
 const Exemple1 = styled.p`
   text-align: justify;
   padding: 2em;
-  background-color: rgba(227, 219, 219,0.8);
+  background-color: rgba(227, 219, 219, 0.8);
+  font-family: var(--text-font);
 `;
 
-
+const ButtonChoice = styled.button`
+  padding: 0.8em;
+  font-size: 16px;
+  border-radius: 5px;
+  color: blue;
+  background-color: var(--important-color);
+  font-weight: bold;
+`;
 
 export default Home;
