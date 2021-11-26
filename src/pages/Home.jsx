@@ -21,12 +21,9 @@ const Home = ({ rangeWordValue, setRangeWordValue }) => {
 
         <div className="example">
           <Exemple1>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eius
-            architecto harum itaque nesciunt eligendi voluptatibus laboriosam.
-            Impedit, reiciendis non, ut sequi quaerat distinctio voluptas a
-            magni aut molestias numquam? Perspiciatis est asperiores
-            reprehenderit similique commodi id deserunt ipsam ratione sed sunt,
-            totam labore. Obcaecati, amet. Deleniti quidem hic expedita?
+            You need some inspiration to find lyrics to accompagn your melodies?
+            Chooser number of words and sentences to get some inspiration. Make
+            this app, yours 🙂
           </Exemple1>
         </div>
         <div className="cursor">
@@ -65,16 +62,19 @@ const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   background-color: #bfc8de;
+  justify-content: space-between;
   align-items: center;
-  height: 95vh;
-  width: 100%;
   margin: 0;
   opacity: 0.8;
 
   .example {
-    margin-top: -7%;
+    /* margin-top: -7%; */
     background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
     background-size: contain;
+    display: flex;
+    justify-content: space-between;
+
+    
   }
 
   h2 {
@@ -95,6 +95,7 @@ const Up = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Exemple1 = styled.p`
@@ -112,6 +113,7 @@ const ButtonChoice = styled.button`
   color: white;
   background-color: grey;
   font-weight: bold;
+  
 `;
 
 export default Home;
