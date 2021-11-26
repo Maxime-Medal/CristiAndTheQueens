@@ -15,7 +15,7 @@ const App = () => {
     <div className="app">
       <Switch>
         <Route path="/" exact >
-          <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>
+          <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue} rangeSentenceValue={rangeSentenceValue} setRangeSentenceValue={setRangeSentenceValue} />
           </Route>
         <Route path="/SwitchPages" exact >
         <SwitchPages rangeWordValue={rangeWordValue} rangeSentenceValue={rangeSentenceValue} setRangeSentenceValue={setRangeSentenceValue} sentences={sentences} setSentences={setSentences} />

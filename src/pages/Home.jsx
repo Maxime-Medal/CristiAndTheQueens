@@ -38,7 +38,7 @@ const Home = ({ rangeWordValue, setRangeWordValue, rangeSentenceValue, setRangeS
           <h2>
             Number of words
             <br />
-            {rangeWordValue}{" "}
+            {rangeWordValue}
           </h2>
           <WordButton
             rangeWordValue={rangeWordValue}
