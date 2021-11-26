@@ -7,12 +7,18 @@ import SwitchPages from "./pages/SwitchPages";
 
 
 const App = () => {
+
+  const [rangeWordValue, setRangeWordValue] = React.useState(10);
   return (
     <div className="app">
       <Navigation />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/SwitchPages" exact component={SwitchPages} />
+        <Route path="/" exact >
+          <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>
+          </Route>
+        <Route path="/SwitchPages" exact >
+        <SwitchPages rangeWordValue={rangeWordValue} />
+        </Route>
         <Route path="/SwitchPages/answer" exact component={Resume} />
       </Switch>
     </div>

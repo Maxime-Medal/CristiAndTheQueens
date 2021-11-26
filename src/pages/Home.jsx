@@ -5,14 +5,15 @@ import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
 import "../index.css";
 
-const Home = () => {
+const Home = ({ rangeWordValue, setRangeWordValue}) => {
   const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
-  const [rangeWordValue, setRangeWordValue] = useState(10);
+
 
   const handleClick = () => {
     console.log("fonction à inserer");
     console.log(rangeSentenceValue, rangeWordValue);
   };
+
 
   return (
     <MainContainer className="home">
@@ -60,13 +61,14 @@ const Home = () => {
 const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-color: #0E7C7B;
   align-items: center;
   height: 95vh;
   width: 100%;
   margin: 0;
 
   .example {
+    margin-top: -7%;
     background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
     background-size: contain;
   }
@@ -86,6 +88,7 @@ const MainContainer = styled.section`
 `;
 
 const Exemple1 = styled.p`
+
   text-align: justify;
   padding: 2em;
   background-color: rgba(227, 219, 219, 0.8);
