@@ -69,6 +69,8 @@ function SwitchPage({ rangeWordValue }) {
 
       </div>
     </div>
+    </div>
+    </div>
   );
 }
 
