@@ -26,6 +26,11 @@ body {
   width: 100%;
 }
 
+.app {
+  width: 100%;
+  height: 100vh;
+}
+
 @media screen and (max-width: 380px){
   .navigation {
     margin: 26px 0;
@@ -33,7 +38,7 @@ body {
     background-color: grey;
     justify-content: space-around;
   }
-   
+  
 
   .navigation a {
     margin: 10px;

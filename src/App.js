@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Navigation from "./components/Navigations";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import SwitchPages from "./pages/SwitchPages";
@@ -11,7 +10,6 @@ const App = () => {
   const [rangeWordValue, setRangeWordValue] = React.useState(10);
   return (
     <div className="app">
-      <Navigation />
       <Switch>
         <Route path="/" exact >
           <Home rangeWordValue={rangeWordValue} setRangeWordValue={setRangeWordValue}/>

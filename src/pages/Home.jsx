@@ -4,19 +4,20 @@ import styled from "styled-components";
 import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
 import "../index.css";
+import Navigation from "../components/Navigations";
 
-const Home = ({ rangeWordValue, setRangeWordValue}) => {
+const Home = ({ rangeWordValue, setRangeWordValue }) => {
   const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
-
 
   const handleClick = () => {
     console.log("fonction à inserer");
     console.log(rangeSentenceValue, rangeWordValue);
   };
 
-
   return (
     <MainContainer className="home">
+      <Navigation />
+
       <div className="example">
         <Exemple1>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eius

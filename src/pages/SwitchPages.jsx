@@ -1,5 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import Resume from "./Resume";
+import Navigation from "../components/Navigations";
 
 const tab = [
   "mama",
@@ -18,7 +20,6 @@ const tab = [
   "juju",
 ];
 
-
 const phrase = [];
 
 function SwitchPage({ rangeWordValue }) {
@@ -31,32 +32,55 @@ function SwitchPage({ rangeWordValue }) {
 
   const addWord = () => {
     let index = Math.floor(Math.random() * tab.length);
-    return (
-      setState(tab[index]),
-      phrase.push(tab[index]),
-      tab.splice(index, 1)
-    );
+    return setState(tab[index]), phrase.push(tab[index]), tab.splice(index, 1);
   };
   console.log(phrase);
   if (rangeWordValue === phrase.length) {
     return <Resume />;
   }
   return (
-    <div>
-      <div>
-        <h1>{state}</h1>
-        <h1>{rangeWordValue}</h1>
-      </div>
-      <div className="button-container">
+    <SelectWord>
+      <Navigation />
+
+      <DivWord>
+        <div className="suggest">
+          <OneWord>{state}</OneWord>
+          <h1>{rangeWordValue}</h1>
+        </div>
+      </DivWord>
+      <LikeButton className="button-container">
         <button type="button" onClick={deleteWord}>
-          Dislike
+          ❌
         </button>
         <button type="button" onClick={addWord}>
-          Like
+          ✅
         </button>
-      </div>
-    </div>
+      </LikeButton>
+    </SelectWord>
   );
 }
+const SelectWord = styled.div`
+  background-color: powderblue;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const DivWord = styled.div`
+  background-color: plum;
+  justify-content:center;
+  align-items: center;
+  height: 40%;
+  width: 80%;
+`;
+
+const OneWord = styled.p`
+  font-size: 3em;
+  background-color: rebeccapurple;
+`;
+
+const LikeButton = styled.div`
+  background-color: royalblue;
+`;
 
 export default SwitchPage;
