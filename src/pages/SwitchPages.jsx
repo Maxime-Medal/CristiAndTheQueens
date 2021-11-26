@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import Resume from './Resume';
 
 const tab = [
   { name: "mama", type: "adjectif" },
@@ -12,7 +13,7 @@ const tab = [
 const objet = tab.map((e) => e.name);
 const phrase = [];
 
-function TindPages() {
+function SwitchPage({ rangeWordValue }) {
   
   const [state, setState] = React.useState("dyd");
 
@@ -34,9 +35,10 @@ function TindPages() {
   
     );
   };
-  console.log(phrase);
-  console.log(objet);
-
+console.log(phrase)
+if(rangeWordValue === phrase.length) {
+  return <Resume /> 
+}
   return (
     <div>
       <div>
@@ -54,4 +56,4 @@ function TindPages() {
   );
 }
 
-export default TindPages;
+export default SwitchPage;

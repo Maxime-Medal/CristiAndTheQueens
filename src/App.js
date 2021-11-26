@@ -1,10 +1,17 @@
 import './App.css';
-import TindPages from './pages/TindPages';
+import Home from './pages/Home';
+
+
+
+
 
 function App() {
+
+
+
   return (
     <div className="App">
-     <TindPages />
+    <Home />
     </div>
   );
 }
