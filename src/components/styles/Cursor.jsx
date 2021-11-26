@@ -7,6 +7,7 @@ input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
   width: 100%;
+  background: none;
 }
 input[type=range]:focus {
   outline: none;
@@ -15,7 +16,6 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 25px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 1px 1px 1px #50555C;
   background: #E3DBDB;
   border-radius: 14px;
@@ -39,7 +39,6 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: 25px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 1px 1px 1px #50555C;
   background: #E3DBDB;
   border-radius: 14px;
@@ -58,7 +57,6 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 25px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
