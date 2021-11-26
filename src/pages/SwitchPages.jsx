@@ -47,7 +47,6 @@ function SwitchPage({ rangeWordValue }) {
     <div>
       <div>
         <h1>{state}</h1>
-        <h1>{rangeWordValue}</h1>
       </div>
       <div className="button-container">
         <button type="button" onClick={deleteWord}>
