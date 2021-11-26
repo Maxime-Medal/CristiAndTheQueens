@@ -1,5 +1,9 @@
 import React from "react";
+
+import Navigation from "../components/Navigations";
+
 import Resume from "./Resume";
+
 
 const tab = [
   "mama",
@@ -44,6 +48,12 @@ function SwitchPage({ rangeWordValue }) {
     return <Resume />;
   }
   return (
+
+    <div className="mainContainer">
+        <Navigation/>
+      <div className="title">
+        Welcome on switch page
+
     <div>
       <div>
         <h1>{state}</h1>
@@ -56,6 +66,7 @@ function SwitchPage({ rangeWordValue }) {
         <button type="button" onClick={addWord}>
           Like
         </button>
+
       </div>
     </div>
   );
