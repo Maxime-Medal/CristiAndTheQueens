@@ -1,7 +1,7 @@
 import React from 'react';
 
 function GiveSentences({words, numbSentence}) {
-    let nouns = words.filter((e) => e.meaning.partOfSpeech==="noun")
+    let nouns = words.include((e) => e.meaning.partOfSpeech==="noun")
     let verbs = words.filter((e) => e.meaning.partOfSpeech==="verb")
     let adjs = words.filter((e) => e.meaning.partOfSpeech==="adj")
     let adverbs= words.filter((e) => e.meaning.partOfSpeech==="adverb")
@@ -20,10 +20,10 @@ function GiveSentences({words, numbSentence}) {
     ]
 
     function TurnIntoSentences(noun, verb, adj, adverb) {
+
         let indexVerb=Math.floor(Math.random() * verb.length)
         let indexAdj=Math.floor(Math.random() * adjs.length)
         let indexAdverb=Math.floor(Math.random() * adverbs.length)
-
         let indexNoun=Math.floor(Math.random() * nouns.length)
         let randomSentence = Math.floor(Math.random()*(numbSentence))
 
