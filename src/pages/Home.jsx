@@ -27,18 +27,30 @@ const Home = () => {
         </Exemple1>
       </div>
       <div className="cursor">
-        <h2>Number of sentences {rangeSentenceValue} </h2>
+        <h2>
+          Number of sentences
+          <br />
+          {rangeSentenceValue}{" "}
+        </h2>
         <SentenceButton
           rangeSentenceValue={rangeSentenceValue}
           setRangeSentenceValue={setRangeSentenceValue}
         />
-        <h2>Number of words {rangeWordValue} </h2>
+        <h2>
+          Number of words
+          <br />
+          {rangeWordValue}{" "}
+        </h2>
         <WordButton
           rangeWordValue={rangeWordValue}
           setRangeWordValue={setRangeWordValue}
         />
       </div>
-      <NavLink to="/answer" onClick={handleClick} value={rangeSentenceValue, rangeWordValue} >
+      <NavLink
+        to="/SwitchPages/answer"
+        onClick={handleClick}
+        value={(rangeSentenceValue, rangeWordValue)}
+      >
         <ButtonChoice>check your choice</ButtonChoice>
       </NavLink>
     </MainContainer>
@@ -48,11 +60,11 @@ const Home = () => {
 const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   background-color: red;
+  align-items: center;
+  height: 95vh;
+  width: 100%;
+  margin: 0;
 
   .example {
     background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
@@ -61,6 +73,15 @@ const MainContainer = styled.section`
 
   h2 {
     font-family: var(--title-font);
+    font-size: 2em;
+    color: var(--);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .cursor {
+    padding: 2em;
+    width: 90%;
   }
 `;
 
@@ -69,6 +90,7 @@ const Exemple1 = styled.p`
   padding: 2em;
   background-color: rgba(227, 219, 219, 0.8);
   font-family: var(--text-font);
+  line-height: 1.3;
 `;
 
 const ButtonChoice = styled.button`

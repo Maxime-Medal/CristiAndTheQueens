@@ -56,7 +56,6 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 25px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
