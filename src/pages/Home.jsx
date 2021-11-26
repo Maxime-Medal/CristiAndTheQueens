@@ -6,49 +6,47 @@ import SentenceButton from "../components/SentenceButton";
 import WordButton from "../components/WordButton";
 import "../index.css";
 
-const Home = ({ rangeWordValue, setRangeWordValue}) => {
+const Home = ({ rangeWordValue, setRangeWordValue }) => {
   const [rangeSentenceValue, setRangeSentenceValue] = useState(50);
-
 
   const handleClick = () => {
     console.log("fonction à inserer");
     console.log(rangeSentenceValue, rangeWordValue);
   };
 
-
   return (
     <MainContainer className="home">
-      <Navigation/>
-      <div className="example">
-        <Exemple1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eius
-          architecto harum itaque nesciunt eligendi voluptatibus laboriosam.
-          Impedit, reiciendis non, ut sequi quaerat distinctio voluptas a magni
-          aut molestias numquam? Perspiciatis est asperiores reprehenderit
-          similique commodi id deserunt ipsam ratione sed sunt, totam labore.
-          Obcaecati, amet. Deleniti quidem hic expedita?
-        </Exemple1>
-      </div>
-      <div className="cursor">
-        <h2>
-          Number of sentences
-          <br />
-          {rangeSentenceValue}{" "}
-        </h2>
-        <SentenceButton
-          rangeSentenceValue={rangeSentenceValue}
-          setRangeSentenceValue={setRangeSentenceValue}
-        />
-        <h2>
-          Number of words
-          <br />
-          {rangeWordValue}{" "}
-        </h2>
-        <WordButton
-          rangeWordValue={rangeWordValue}
-          setRangeWordValue={setRangeWordValue}
-        />
-      </div>
+      <Up>
+        <Navigation />
+
+        <div className="example">
+          <Exemple1>
+            You need some inspiration to find lyrics to accompagn your melodies?
+            Chooser number of words and sentences to get some inspiration. Make
+            this app, yours 🙂
+          </Exemple1>
+        </div>
+        <div className="cursor">
+          <h2>
+            Number of sentences
+            <br />
+            {rangeSentenceValue}{" "}
+          </h2>
+          <SentenceButton
+            rangeSentenceValue={rangeSentenceValue}
+            setRangeSentenceValue={setRangeSentenceValue}
+          />
+          <h2>
+            Number of words
+            <br />
+            {rangeWordValue}{" "}
+          </h2>
+          <WordButton
+            rangeWordValue={rangeWordValue}
+            setRangeWordValue={setRangeWordValue}
+          />
+        </div>
+      </Up>
       <NavLink
         to="/SwitchPages"
         onClick={handleClick}
@@ -63,17 +61,20 @@ const Home = ({ rangeWordValue, setRangeWordValue}) => {
 const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: #BFC8DE;
+  background-color: #bfc8de;
+  justify-content: space-between;
   align-items: center;
-  height: 95vh;
-  width: 100%;
   margin: 0;
   opacity: 0.8;
 
   .example {
-    margin-top: -7%;
+    /* margin-top: -7%; */
     background-image: url("https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80");
     background-size: contain;
+    display: flex;
+    justify-content: space-between;
+
+    
   }
 
   h2 {
@@ -90,8 +91,14 @@ const MainContainer = styled.section`
   }
 `;
 
-const Exemple1 = styled.p`
+const Up = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
 
+const Exemple1 = styled.p`
   text-align: justify;
   padding: 2em;
   background-color: rgba(227, 219, 219, 0.8);
@@ -106,6 +113,7 @@ const ButtonChoice = styled.button`
   color: white;
   background-color: grey;
   font-weight: bold;
+  
 `;
 
 export default Home;

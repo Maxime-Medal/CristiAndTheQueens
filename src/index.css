@@ -26,35 +26,7 @@ body {
   width: 100%;
 }
 
-.NavBar{
-  margin-top: -6%;
+.app {
+  width: 100%;
+  /* height: 100vh; */
 }
-  .navigation {
-    margin: 26px 0;
-    width: 60vh;
-    display: flex;
-    background-color: #e3dbdb;
-    justify-content: space-around;
-  }
-   
-
-  .navigation a {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 1.8rem;
-    position: relative;
-    color: #0E7C7B;
-  }
-
-  .nav-active ::after{
-    width: 85%;
-    height: 5px;
-    
-    bottom: 1px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  
- 
