@@ -47,7 +47,7 @@ const Home = () => {
         />
       </div>
       <NavLink
-        to="/SwitchPages/answer"
+        to="/SwitchPages"
         onClick={handleClick}
         value={(rangeSentenceValue, rangeWordValue)}
       >
