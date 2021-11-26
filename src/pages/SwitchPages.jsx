@@ -22,7 +22,7 @@ const tab = [
 const phrase = [];
 
 function SwitchPage({ rangeWordValue }) {
-  const [state, setState] = React.useState("dyd");
+  const [state, setState] = React.useState("Click on like to begin");
 
   const deleteWord = () => {
     let index = Math.floor(Math.random() * tab.length);
@@ -38,7 +38,9 @@ function SwitchPage({ rangeWordValue }) {
     );
   };
   console.log(phrase);
-  if (rangeWordValue === phrase.length) {
+  console.log(tab)
+
+  if (rangeWordValue == phrase.length) {
     return <Resume />;
   }
   return (
