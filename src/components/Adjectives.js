@@ -1,9 +1,6 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Words from "./Words";
+import React from "react";
 
 const Adjectives = () => {
-  const [index, setIndex] = useState([]);
 
   let adjectives = [
     "relieved",
@@ -110,18 +107,9 @@ const Adjectives = () => {
 
   const random = adjectives[Math.floor(Math.random() * adjectives.length)];
 
-  useEffect(() => {
-    axios
-      .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${random}`)
-      .then((res) => res.data)
-      .then((res) => setIndex(res));
-  }, []);
-
   return (
     <div>
-      {index.map((word) => (
-        <Words word={word} key={word.word} />
-      ))}
+{random}
     </div>
   );
 };

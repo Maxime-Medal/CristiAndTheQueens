@@ -1,10 +1,6 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Words from "./Words";
+import React from "react";
 
 const Verbs = () => {
-  const [index, setIndex] = useState([]);
-
   let verbs = [
     "market",
     "kill",
@@ -109,21 +105,7 @@ const Verbs = () => {
 
   const random = verbs[Math.floor(Math.random() * verbs.length)];
 
-  useEffect(() => {
-    axios
-      .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${random}`)
-      .then((res) => res.data)
-      .then((res) => setIndex(res));
-  }, []);
-
-  return (
-    <div>
-      {" "}
-      {index.map((word) => (
-        <Words word={word} key={word.word} />
-      ))}
-    </div>
-  );
+  return <div>{random}</div>;
 };
 
 export default Verbs;
