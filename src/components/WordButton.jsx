@@ -15,4 +15,5 @@ const WordButton = ({rangeWordValue, setRangeWordValue}) => {
   );
 };
 
+
 export default WordButton;
